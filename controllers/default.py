@@ -8,8 +8,10 @@
 # - download is for downloading files uploaded in the db (does streaming)
 # -------------------------------------------------------------------------
 
-# from gluon.custom_import import track_changes
-# track_changes(True)
+from gluon.custom_import import track_changes
+track_changes(True)
+
+import urllib
 
 import oauth.oauth as oauth
 from pytsugi import tsugi
@@ -30,8 +32,16 @@ def launch() :
     # session.y = session.get('y',0) + 1
     # print session
     launch = tsugi.web2py(request, response, session)
-    # redirect("http://www.tsugi.org")
-    return ""
+    if not launch.valid : 
+        print "Not Valid"
+        if launch.redirecturl is not None :
+            print "Redirect to",launch.redirecturl
+            redirect(launch.redirecturl)
+            return ''
+        return launch.detail
+    
+    print "Good launch"
+    return "Good Launch"
 
 def user():
     """
