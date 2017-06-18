@@ -8,6 +8,11 @@
 # - download is for downloading files uploaded in the db (does streaming)
 # -------------------------------------------------------------------------
 
+# from gluon.custom_import import track_changes
+# track_changes(True)
+
+import oauth.oauth as oauth
+from pytsugi import tsugi
 
 def index():
     """
@@ -20,6 +25,13 @@ def index():
     response.flash = T("Hello World")
     return dict(message=T('Welcome to web2py!'))
 
+def launch() : 
+    print "Welcome to Launch"
+    # session.y = session.get('y',0) + 1
+    # print session
+    launch = tsugi.web2py(request, response, session)
+    # redirect("http://www.tsugi.org")
+    return ""
 
 def user():
     """
@@ -57,5 +69,3 @@ def call():
     supports xml, json, xmlrpc, jsonrpc, amfrpc, rss, csv
     """
     return service()
-
-
