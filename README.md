@@ -15,8 +15,18 @@ You also need pytsugi in modules.  Someday this will be in pypi, but for now
     cd modules
     git clone https://github.com/tsugiproject/pytsugi.git
 
-Then checkout and setup a PHP tsugi according to www.tsugi.org - get the databases
-all set up.  
+Then checkout, install and setup a PHP tsugi instance according to
+www.tsugi.org - get the databases all set up.
+
+Where is the Web2Py Code?
+-------------------------
+
+Take a look at `controllers/default.py` and see the `launch` function to see
+how this app uses `pytsugi`
+
+You can look at the `pytsugi` code in `modules/pytsugi`
+
+This is early days so expect a lot of print statements as the code evolves.
 
 Testing
 -------
