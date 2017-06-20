@@ -29,8 +29,6 @@ def index():
 
 def launch() : 
     print "Welcome to Launch"
-    # session.y = session.get('y',0) + 1
-    # print session
     launch = tsugi.web2py(request, response, session)
     if not launch.valid : 
         print "Not Valid"
@@ -45,6 +43,16 @@ def launch() :
     print "course id", launch.context.id
     print "course", launch.context.title
     return "Good Launch"
+
+def second() : 
+    print "Welcome to second"
+    launch = tsugi.web2py(request, response, session)
+
+    print "user id", launch.user.id
+    print "instructor", launch.user.instructor()
+    print "course id", launch.context.id
+    print "course", launch.context.title
+    return "Good second"
 
 def user():
     """
