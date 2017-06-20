@@ -40,7 +40,10 @@ def launch() :
             return ''
         return launch.detail
     
-    print "Good launch"
+    print "user id", launch.user.id
+    print "instructor", launch.user.instructor()
+    print "course id", launch.context.id
+    print "course", launch.context.title
     return "Good Launch"
 
 def user():
