@@ -42,7 +42,6 @@ def launch() :
     print "instructor", launch.user.instructor()
     print "course id", launch.context.id
     print "course", launch.context.title
-    print db
     return 'Good Launch <a href="display_form">Continue...</a>'
 
 def display_form():
