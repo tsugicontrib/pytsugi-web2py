@@ -3,5 +3,6 @@
 *.bak
 errors/*
 databases/*
+sessions/*
 modules/pytsugi
 

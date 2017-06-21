@@ -42,17 +42,27 @@ def launch() :
     print "instructor", launch.user.instructor()
     print "course id", launch.context.id
     print "course", launch.context.title
-    return "Good Launch"
+    return 'Good Launch <a href="display_form">Continue...</a>'
 
-def second() : 
-    print "Welcome to second"
+def display_form():
     launch = tsugi.web2py(request, response, session)
-
+    form = FORM('Enter grade:',
+              INPUT(_name='grade', requires=IS_NOT_EMPTY()),
+              INPUT(_type='submit'))
     print "user id", launch.user.id
-    print "instructor", launch.user.instructor()
-    print "course id", launch.context.id
-    print "course", launch.context.title
-    return "Good second"
+    if form.process().accepted:
+        response.flash = 'form accepted '+str(form.vars.grade)
+        launch.result.setGrade(float(form.vars.grade),"Nice work")
+        # session.flash = 'form accepted '+str(form.vars.grade)
+        # redirect(URL('next'))
+    elif form.errors:
+        response.flash = 'form has errors'
+    else:
+        response.flash = 'please fill the form'
+    return dict(form=form, launch=launch)
+
+def next():
+    return dict()
 
 def user():
     """
