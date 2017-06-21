@@ -14,7 +14,7 @@ track_changes(True)
 import urllib
 
 import oauth.oauth as oauth
-from pytsugi import tsugi
+from pytsugi import LTIX
 
 def index():
     """
@@ -29,7 +29,7 @@ def index():
 
 def launch() : 
     print "Welcome to Launch"
-    launch = tsugi.web2py(request, response, session)
+    launch = LTIX.web2py(request, response, session)
     if not launch.valid : 
         print "Not Valid"
         if launch.redirecturl is not None :
@@ -45,7 +45,7 @@ def launch() :
     return 'Good Launch <a href="display_form">Continue...</a>'
 
 def display_form():
-    launch = tsugi.web2py(request, response, session)
+    launch = LTIX.web2py(request, response, session)
     form = FORM('Enter grade:',
               INPUT(_name='grade', requires=IS_NOT_EMPTY()),
               INPUT(_type='submit'))
