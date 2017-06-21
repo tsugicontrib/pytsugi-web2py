@@ -29,7 +29,7 @@ def index():
 
 def launch() : 
     print "Welcome to Launch"
-    launch = LTIX.web2py(request, response, session)
+    launch = LTIX.web2py(request, response, db, session)
     if not launch.valid : 
         print "Not Valid"
         if launch.redirecturl is not None :
@@ -42,10 +42,11 @@ def launch() :
     print "instructor", launch.user.instructor()
     print "course id", launch.context.id
     print "course", launch.context.title
+    print db
     return 'Good Launch <a href="display_form">Continue...</a>'
 
 def display_form():
-    launch = LTIX.web2py(request, response, session)
+    launch = LTIX.web2py(request, response, db, session)
     form = FORM('Enter grade:',
               INPUT(_name='grade', requires=IS_NOT_EMPTY()),
               INPUT(_type='submit'))

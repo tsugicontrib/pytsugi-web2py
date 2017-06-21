@@ -28,10 +28,12 @@ if not request.env.web2py_runtime_gae:
     # ---------------------------------------------------------------------
     # if NOT running on Google App Engine use SQLite or other DB
     # ---------------------------------------------------------------------
-    db = DAL(myconf.get('db.uri'),
-             pool_size=myconf.get('db.pool_size'),
-             migrate_enabled=myconf.get('db.migrate'),
-             check_reserved=['all'])
+    # db = DAL(myconf.get('db.uri'),
+    #         pool_size=myconf.get('db.pool_size'),
+    #         migrate_enabled=myconf.get('db.migrate'),
+    #         check_reserved=['all'])
+    db = DAL('mysql://ltiuser:ltipassword@localhost:8889/tsugi',
+            fake_migrate_all=True)
 else:
     # ---------------------------------------------------------------------
     # connect to Google BigTable (optional 'google:datastore://namespace')
