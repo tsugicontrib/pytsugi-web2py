@@ -10,10 +10,8 @@ Check this code out into a web2py distro:
 
 You cannot use dashes in application names in web2py apparently.
 
-You also need pytsugi in modules.  Someday this will be in pypi, but for now
-
-    cd modules
-    git clone https://github.com/tsugiproject/pytsugi.git
+You also need pytsugi available via `pip`.  See the installation
+instructions in https://github.com/tsugiproject/pytsugi
 
 Then checkout, install and setup a PHP tsugi instance according to
 www.tsugi.org - get the databases all set up.
@@ -23,8 +21,6 @@ Where is the Web2Py Code?
 
 Take a look at `controllers/default.py` and see the `launch` function to see
 how this app uses `pytsugi`
-
-You can look at the `pytsugi` code in `modules/pytsugi`
 
 This is early days so expect a lot of print statements as the code evolves.
 
@@ -41,7 +37,9 @@ Set the launch url to:
 
 And launch.
 
-For now there is lots of output so watch the web2py console.   If you edit the module
-code make sure to restart the web2py server to force module reload.  I wish
-there was a tick box somewhere to say "developer mode" to override the caching.
+For now there is lots of output so watch the web2py console.
+If you edit the pytsugi module code make sure to restart the
+web2py server to force module reload.  I wish
+there was a tick box somewhere to say "developer mode" to
+override the module caching.
 
