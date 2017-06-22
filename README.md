@@ -16,11 +16,16 @@ instructions in https://github.com/tsugiproject/pytsugi
 Then checkout, install and setup a PHP tsugi instance according to
 www.tsugi.org - get the databases all set up.
 
+This wants its database to be on MySQL so look in the `models/db.py` to see
+how this is set up:
+
+    db = DAL('mysql://ltiuser:ltipassword@localhost:8889/tsugi')
+
 Where is the Web2Py Code?
 -------------------------
 
-Take a look at `controllers/default.py` and see the `launch` function to see
-how this app uses `pytsugi`
+Take a look at `controllers/default.py` and see the `launch` and `display_form`
+functions to see how this app uses `pytsugi`.
 
 This is early days so expect a lot of print statements as the code evolves.
 
