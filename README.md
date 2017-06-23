@@ -43,8 +43,9 @@ Set the launch url to:
 And launch.
 
 For now there is lots of output so watch the web2py console.
-If you edit the pytsugi module code make sure to restart the
-web2py server to force module reload.  I wish
+
+If you edit the pytsugi module code in developer mode make sure
+to restart the web2py server to force module reload.  I wish
 there was a tick box somewhere to say "developer mode" to
 override the module caching.
 
