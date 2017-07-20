@@ -13,6 +13,9 @@ You cannot use dashes in application names in web2py apparently.
 You also need pytsugi available via `pip`.  See the installation
 instructions in https://github.com/tsugiproject/pytsugi
 
+Database Setup
+--------------
+
 Then checkout, install and setup a PHP tsugi instance according to
 www.tsugi.org - get the databases all set up.
 
